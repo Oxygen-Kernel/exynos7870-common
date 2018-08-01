@@ -1072,7 +1072,7 @@ static inline void exynos_ss_hook_logbuf(const char buf)
 #ifdef CONFIG_SEC_PM_DEBUG
 			sec_log_full = true;
 #endif
-			*((unsigned long long *)(item->head_ptr + item->entry.size - (size_t)0x08)) = SEC_LKMSG_MAGICKEY;
+			//*((unsigned long long *)(item->head_ptr + item->entry.size - (size_t)0x08)) = SEC_LKMSG_MAGICKEY;
 		}
 
 		item->curr_ptr[0] = buf;
@@ -1096,7 +1096,7 @@ static inline void exynos_ss_hook_logbuf(const char *buf, size_t size)
 #ifdef CONFIG_SEC_PM_DEBUG
 			sec_log_full = true;
 #endif
-			*((unsigned long long *)(item->head_ptr + item->entry.size - (size_t)0x08)) = SEC_LKMSG_MAGICKEY;
+			//*((unsigned long long *)(item->head_ptr + item->entry.size - (size_t)0x08)) = SEC_LKMSG_MAGICKEY;
 		}
 
 		memcpy(item->curr_ptr, buf, size);
